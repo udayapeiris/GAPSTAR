@@ -3,13 +3,9 @@
 package Resources;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -22,10 +18,10 @@ public class BaseClass {
 
 	// This method use to initialize the driver and return driver to the test cases.
 	public WebDriver initializeWebDriver() throws IOException {
-		
+
 		// Use property file to read golbal data
 		Properties gapPropFile = new Properties();
-		
+
 		// You may need to change the property file path
 		FileInputStream gapInputStream = new FileInputStream(
 				"C:\\Users\\UPeiris\\eclipse-workspace\\GAPSTAR\\src\\main\\java\\Resources\\globalData.properties");
@@ -35,7 +31,7 @@ public class BaseClass {
 		// Get the Browser value from property file
 		String gapBrowser = gapPropFile.getProperty("browser");
 		String gapUrl = gapPropFile.getProperty("url");
-		
+
 		// Initialize Chrome Driver
 		if (gapBrowser.equals("Chrome")) {
 			System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
@@ -70,7 +66,5 @@ public class BaseClass {
 		gapDriver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
 		return gapDriver;
 	}
-
-	
 
 }

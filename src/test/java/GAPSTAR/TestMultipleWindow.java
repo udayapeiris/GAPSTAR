@@ -32,15 +32,15 @@ public class TestMultipleWindow extends BaseClass {
 		Iterator<String> gapIterator = gapOpenWindows.iterator();
 
 		// Get parent window ID
-		String paentID = gapIterator.next();
+		String parentID = gapIterator.next();
 		// Get child win ID
-		String chieldID = gapIterator.next();
+		String childID = gapIterator.next();
 
-		gapDriver.switchTo().window(chieldID);
+		gapDriver.switchTo().window(childID);
 		String actualChildHeader = gapChildWindowPage.header_h3().getText();
 		String expectedChildHeader = "New Window";
 
-		gapDriver.switchTo().window(paentID);
+		gapDriver.switchTo().window(parentID);
 		String actuaParentHeader = gapMultipleWindowPage.header_h3().getText();
 		String expectedParentHeader = "Opening a new window";
 

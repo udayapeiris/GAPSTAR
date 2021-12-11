@@ -26,7 +26,6 @@ public class TestDropDown extends BaseClass {
 
 		// Getting test input data form the external file
 		Properties gapPropFile = new Properties();
-
 		// You may change the property file path
 		FileInputStream gapInputStream = new FileInputStream(
 				"C:\\Users\\UPeiris\\eclipse-workspace\\GAPSTAR\\src\\test\\java\\TestData\\TestDropDown.properties");
@@ -43,7 +42,6 @@ public class TestDropDown extends BaseClass {
 
 		// Set dropdown value
 		gapSelect.selectByVisibleText(gapOptionValue);
-
 		// Get the text of the selected value
 		String actValue = gapSelect.getFirstSelectedOption().getText();
 

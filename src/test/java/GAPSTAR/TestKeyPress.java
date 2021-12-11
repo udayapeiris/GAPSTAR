@@ -17,7 +17,6 @@ public class TestKeyPress extends BaseClass {
 
 	public void loadUrl() throws IOException {
 		gapDriver = initializeWebDriver();
-
 	}
 
 	public void testCheckBoxPage() {
@@ -29,8 +28,8 @@ public class TestKeyPress extends BaseClass {
 		gapAction.moveToElement(gapCheckBoxPage.txt_Target()).click().keyDown(Keys.SHIFT).build().perform();
 
 		String gapResult = gapCheckBoxPage.lbl_Label().getText();
-		System.out.println("Result value is :" +gapResult);
-		assertTrue(gapResult.contains("SHIFT"), "String did not have the required key.");
+		System.out.println("Result value is :" + gapResult);
+		assertTrue(gapResult.contains("SHIFT"), "Result did not have the required key.");
 		gapDriver.quit();
 	}
 

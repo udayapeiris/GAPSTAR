@@ -1,5 +1,7 @@
 package GAPSTAR;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 
 import org.openqa.selenium.interactions.Actions;
@@ -13,7 +15,6 @@ public class TestHovers extends BaseClass{
 	
 	public void loadUrl() throws IOException {
 		gapDriver=initializeWebDriver();
-			
 	}
 	
 	public void testHoverPage() {
@@ -25,9 +26,11 @@ public class TestHovers extends BaseClass{
 				
 		for (int i=0;i<img_User;i++) {
 		gapAction.moveToElement(gapHoverPage.img_User().get(i)).build().perform();
-		
 		String userName= gapHoverPage.lbl_UserName().get(i).getText();
 		System.out.println("User name is : " +userName);
+		
+		//Verify User names 
+		assertTrue(userName.contains("user"+Integer.toString(i+1)), "User name is invalid.");
 		}
 		
 		gapDriver.quit();
